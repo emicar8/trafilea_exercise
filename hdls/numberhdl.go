@@ -37,7 +37,7 @@ func (hdl *NumberHdl) GetNumber(w http.ResponseWriter, r *http.Request) {
 	}
 	num, err := hdl.numberSrv.GetNumber(id)
 	if err != nil {
-		w.WriteHeader(http.StatusBadRequest)
+		w.WriteHeader(http.StatusNotFound)
 		return
 	}
 	w.Header().Set("Content-Type", "application/json")

@@ -20,3 +20,24 @@ Utilize only one if statement within the core logic. Avoid else, else if, ternar
     - Numbers divisible by 5: Categorized as "Type 2"
     - Numbers divisible by both 3 and 5: Categorized as "Type 3"
     - Other numbers: Stored as their original value
+
+## Usage
+- Number Addition:
+    - The API shall provide a mechanism to save a number into its collection.
+    ```
+    curl --location 'http://localhost:8080/numbers' \
+    --header 'Content-Type: application/json' \
+    --data '{
+        "number": 1
+    }'
+    ```
+- Number Retrieval:
+    - The API shall allow the retrieval of a specific number's classification. If the number is not found, the API should indicate this.
+    ```
+    curl --location 'http://localhost:8080/numbers/1'
+    ```
+- Collection Retrieval:
+    - The API shall enable the retrieval of all stored numbers and their classifications.
+    ```
+    curl --location 'http://localhost:8080/numbers'
+    ```
